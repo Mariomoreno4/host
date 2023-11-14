@@ -19,8 +19,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='3113131234fsdf1')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG=True
 #DEBUG = 'RENDER' not in os.environ
-
-ALLOWED_HOSTS = ['django-auth-crud-guac.onrender.com']
+ALLOWED_HOSTS = ['django-auth-crud-guac.onrender.com', '52.41.36.82', '54.191.253.12', '44.226.122.3']
 
 #RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 #if RENDER_EXTERNAL_HOSTNAME:
