@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = 'django-insecure-_&*+pf_#zxlc2#=ub3ys1^r=-m7%3&0&+pos=sti+w!un@49hq'
-SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
+SECRET_KEY = os.environ.get('SECRET_KEY', default='3113131234fsdf1')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -88,8 +88,8 @@ DATABASES = {
     
      'default': dj_database_url.config(
         # Feel free to alter this value to suit your needs.
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
-        conn_max_age=600
+        conn_max_age=600,
+        conn_health_checks=True,
     )
   
 }
