@@ -2,7 +2,7 @@
 import os
 from pathlib import Path
 import dj_database_url
-from decouple import config
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -87,8 +87,10 @@ WSGI_APPLICATION = 'ECOMMERCE.wsgi.application'
 DATABASES = {
     
      'default': dj_database_url.config(
+        # Feel free to alter this value to suit your needs.
         conn_max_age=600,
-        default=config('DATABASE_URL', default='sqlite:///' + BASE_DIR / "db.sqlite3"),
+        default='sqlite:///db.sqlite3',
+
         conn_health_checks=True,
     )
   
