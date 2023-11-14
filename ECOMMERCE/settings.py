@@ -2,7 +2,7 @@
 import os
 from pathlib import Path
 import dj_database_url
-
+from decouple import config as decouple_config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -83,14 +83,13 @@ WSGI_APPLICATION = 'ECOMMERCE.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite:///db.sqlite3')
 
 DATABASES = {
     
-     'default': dj_database_url.config(
-        # Feel free to alter this value to suit your needs.
+   'default': dj_database_url.config(
+        default=DATABASE_URL,
         conn_max_age=600,
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
-
         conn_health_checks=True,
     )
   
