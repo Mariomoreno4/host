@@ -257,12 +257,7 @@ def acerca_de(request):
     
 def nominas(request):
     datos = empleados.objects.all()
-    
- 
-    
 
-    
-  
     if request.method == 'POST':
          
         
@@ -274,7 +269,7 @@ def nominas(request):
     # Realiza la consulta filtrando por los nombres en la lista 'datos'
          datos = empleados.objects.filter(id=datos)
 
-         return render(request, 'sitio/nominas/transferenciaNomina.html', {'datos': datos})
+         return render(request, 'sitio/nominas/TransferenciaNomina.html', {'datos': datos})
     else:
        
         return render(request, 'sitio/nominas/nomina.html', {'datos': datos})
